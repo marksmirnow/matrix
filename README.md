@@ -1,1 +1,3 @@
-# matrix
+# Matrix
+
+Matrix drawing on canvas
