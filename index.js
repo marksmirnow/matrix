@@ -25,7 +25,7 @@ for (let i = 48; i <= 122; i++) {
 
 const fallingChars = new Array();
 const maxCharCount = 200;
-const fontSize = 13;
+const fontSize = 10;
 const maxColumns = Math.floor(cw / fontSize);
 
 let frames = 0;
@@ -33,7 +33,7 @@ let frames = 0;
 
 // Create class of falling char
 class FallingChar {
-	constructor (x, y) {
+	constructor(x, y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -50,10 +50,10 @@ class FallingChar {
 
 		// WTF IS GOING ON
 		if (this.y > ch) {
-      this.y = (Math.random() * ch) / 2 - 50;
-      this.x = Math.floor(Math.random() * maxColumns) * fontSize;
-      this.speed = (-Math.random() * fontSize * 3) / 4 + (fontSize * 3) / 4;
-    }
+			this.y = (Math.random() * ch) / 2 - 50;
+			this.x = Math.floor(Math.random() * maxColumns) * fontSize;
+			this.speed = (-Math.random() * fontSize * 3) / 4 + (fontSize * 3) / 4;
+		}
 	}
 }
 
@@ -61,11 +61,11 @@ class FallingChar {
 const update = () => {
 
 	if (fallingChars.length < maxCharCount) {
-		
+
 		const fallingChar = new FallingChar(
-									Math.floor(Math.random() * maxColumns) * fontSize,
-      							(Math.random() * ch) / 2 - 50
-      						);
+			Math.floor(Math.random() * maxColumns) * fontSize,
+			(Math.random() * ch) / 2 - 50
+		);
 		fallingChars.push(fallingChar);
 	}
 
@@ -75,8 +75,8 @@ const update = () => {
 
 	// WTF IS GOING ON 2 OH MY FUCKING GOD
 	for (let i = 0; i < fallingChars.length && frames % 2 == 0; i++) {
-   fallingChars[i].draw(context);
-  }
+		fallingChars[i].draw(context);
+	}
 
 
 	requestAnimationFrame(update);
