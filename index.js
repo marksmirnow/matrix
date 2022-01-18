@@ -84,3 +84,5 @@ const update = () => {
 }
 
 update()
+
+console.log('test');
